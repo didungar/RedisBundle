@@ -1,0 +1,19 @@
+{
+    "name": "DidUngar/RedisBundle",
+    "type": "library",
+    "description": "Bundle for use and admin a redis via php.",
+    "authors": [
+        {
+            "name": "Didier Ungar",
+            "email": "didungar@gmail.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["/"]
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.0"
+        }
+    }
+}
