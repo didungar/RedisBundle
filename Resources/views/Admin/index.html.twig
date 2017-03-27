@@ -1,0 +1,33 @@
+{# extends 'base.html.twig' #}
+{% extends 'DidUngarBootstrapBundle:Default:base.html.twig' %}
+
+{% block body %}
+<div class="row">
+<div class="panel panel-default col-xs-6 col-md-3">
+	<div class="panel-heading">oRedis.get($key)</div>
+	<form action="" method="POST">
+		<input type="hidden" name="act" value="get" />
+		<input name="key" placeholder="$key" />
+		<input type="submit" />
+	</form>
+</div>
+<div class="panel panel-default col-xs-6 col-md-3">
+	<div class="panel-heading">oRedis.set($key, $value, $ttl=-1)</div>
+	<form action="" method="POST">
+		<input type="hidden" name="act" value="set" />
+		<input type="text" name="key" placeholder="$key" />
+		<input type="text" name="value" placeholder="$value" />
+		<input type="integer" name="ttl" placeholder="Time To Live" />
+		<input type="submit" />
+	</form>
+</div>
+
+<div class="panel panel-default col-xs-6 col-md-3">
+	<div class="panel-heading">Small resume</div>
+	<div class="panel-body">
+		Redis has {{keys_count}} keys.
+	</div>
+</div>
+</div>
+{% endblock %}
+
