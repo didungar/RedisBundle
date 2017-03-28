@@ -25,7 +25,11 @@ class AdminController extends Controller
         	                case 'set' :
         	                        var_dump($_POST['key']);
         	                        var_dump($_POST['value']);
-        	                        var_dump($oRedis->set($_POST['key'], $_POST['value']));
+                                    if ( $_POST['ttl']>0 ) {
+                                       var_dump($oRedis->set($_POST['key'], $_POST['value'], (int)$_POST['ttl']));
+                                    } else {
+        	                           var_dump($oRedis->set($_POST['key'], $_POST['value']));
+                                    }
         	                        break;
 				case 'delete' :
 					var_dump($_POST['key']);
