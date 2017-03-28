@@ -72,8 +72,8 @@ class AdminController extends Controller
 		}
 var_dump($lstKeys);
 		return [
-		'lstKeys' => $lstKeys,
-	];
+			'lstKeys' => $lstKeys,
+		];
 	}
 	/**
 	 * @Route("/info")
