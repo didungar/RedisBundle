@@ -2,17 +2,17 @@
 
 {% block body %}
 <div class="row">
-{% for aKey in lstKeys %}
+{% for iKey, aKey in lstKeys %}
 <div class="panel panel-default col-xs-6 col-md-3">
 	<div class="panel-heading">{{ aKey.key }}</div>
 	<ul>
 		<li>{{ aKey.value }} <span class="badge">{{ aKey.ttl }}</span></li>
 	</ul>
-	<form action="" method="POST" id="oRedis_delete_{{ aKey.key }}">
+	<form action="" method="POST" id="oRedis_delete_{{ iKey }}">
 		<input type="hidden" name="act" value="delete" />
 		<input type="hidden" name="key" value="{{ aKey.key }}" />
 		<span class="glyphicon glyphicon-trash btn btn-danger btn-xs" aria-hidden="true"
-			onclick="$('#oRedis_delete_{{ aKey.key }}').submit();"
+			onclick="$('#oRedis_delete_{{ iKey }}').submit();"
 			style="float:right;"
 			></span>
 	</form>

@@ -64,7 +64,7 @@ class AdminController extends Controller
 		$keys = $oRedis->keys('*');
 		$lstKeys = [];
 		foreach($keys as $key) {
-			$lstKeys[$key] = [
+			$lstKeys[] = [
 				'key' => $key,
 				'value' => $oRedis->get($key),
 				'ttl' => $oRedis->ttl($key),
