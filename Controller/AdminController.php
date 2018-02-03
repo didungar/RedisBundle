@@ -60,7 +60,7 @@ class AdminController extends Controller
 	{
 		$oRedis = new \Redis();
 		$oRedis->connect('localhost');
-	   $this->actionForm();
+		$this->actionForm();
 		$keys = $oRedis->keys('*');
 		$lstKeys = [];
 		foreach($keys as $key) {
@@ -70,7 +70,7 @@ class AdminController extends Controller
 				'ttl' => $oRedis->ttl($key),
 			];
 		}
-var_dump($lstKeys);
+
 		return [
 			'lstKeys' => $lstKeys,
 		];

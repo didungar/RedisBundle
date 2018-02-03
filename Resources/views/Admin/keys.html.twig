@@ -4,10 +4,8 @@
 <div class="row">
 {% for iKey, aKey in lstKeys %}
 <div class="panel panel-default col-xs-6 col-md-3">
-	<div class="panel-heading">{{ aKey.key }}</div>
-	<ul>
-		<li>{{ aKey.value }} <span class="badge">{{ aKey.ttl }}</span></li>
-	</ul>
+	<div class="panel-heading">{{ aKey.key }} <span class="badge">ttl:{{ aKey.ttl }}</span></div>
+	<p class="lead">{{ aKey['value'] }}</p>
 	<form action="" method="POST" id="oRedis_delete_{{ iKey }}">
 		<input type="hidden" name="act" value="delete" />
 		<input type="hidden" name="key" value="{{ aKey.key }}" />
